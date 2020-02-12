@@ -12,3 +12,10 @@ $(document).ready(function() {
         event.stopPropagation();
     });
 });
+
+$(document).ready(function() {
+    $(document).delegate('.open', 'click', function(event){
+        $(this).ad
+        event.stopPropagation();
+    })
+})

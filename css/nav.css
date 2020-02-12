@@ -208,14 +208,11 @@ h1 {
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }*/
-.slide-menu:hover{
-    width: 100%;
-}
 .slide-menu {
-    width: 10px;
+    width: 30px;
     height: 30px;
     float: right;
     background-color: blue;
-    transition: width 0.5s;
+    transition: width 1s;
     transition-timing-function: ease-out;
 }
