@@ -1,14 +1,78 @@
-html {
+:root {
+    --primary-color: rgb(54, 165, 54);
+    --secondary-color: rgb(255, 217, 0);
+
+    --primary-color-hover: rgb(46, 149, 46);
+    --white-hover: rgb(211, 211, 211);
+
+    --bg-color: #199c6c;
+    --shadow-color: #094a328c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    /* font-family: Helvetica, sans-serif; */
+    font-family: 'Roboto Condensed', 'sans-serif';
     font-family: Helvetica, sans-serif;
     font-weight: 300;
     font-size: 16px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background-color: var(--bg-color);
+}
+
+body {
+    margin: 0% 10%;
+    line-height: 1;
+}
+
+h3 { 
+    margin: 10px 0px; 
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+input {
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+    font: inherit;
+}
+input:focus {
+    outline-color: var(--shadow-color);
+}
+/* Polls */
+#poll-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .poll {
-    width: 500px;
+    width: 40%;
+    /* max-width: 750px; */
     padding: 25px;
     border-radius: 5px;
-    box-shadow: 3px 5px 3px #888888;
+    box-shadow: 1px 2px 5px 3px var(--shadow-color);
+    margin: 25px;
+    background-color: #f2f2f2;
+}
+/* Main Poll will be larger, first and centered */
+.poll.main {
+    width: 75%;
+    max-width: none;
+    height: 25%;
+    justify-self: center;
+    box-shadow: 2px 3px 5px 4px #6f8a80;
 }
 
 .voting-bar {
@@ -26,3 +90,86 @@ html {
     display: flex;
     align-items: center;
 }
+
+button.inverse-btn {
+    height: 35px;
+    border: none;
+    border-radius: 2px;
+    /* background-color: var(--primary-color); */
+    background-color: #f2f2f2;
+    /* color: #f2f2f2; */
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 1px 2px 5px 3px var(--shadow-color);
+}
+
+button.inverse-btn:hover {
+    background-color: var(--primary-color-hover);
+    color: var(--white-hover);
+}
+
+button.inverse-btn:focus {
+    box-shadow: 1px 2px 5px 3px var(--shadow-color);
+    border: none;
+    outline-color: var(--shadow-color);
+}
+
+button.next-btn:after { 
+    content: ">"
+}
+
+  /* Dropdown Selector */
+  div.selector {
+    margin: 34px auto;
+    width: 260px;
+    background-color: transparent;
+  }
+  
+  div.dropdown {
+    position: relative;
+  }
+  
+  div.dropdown > div {
+    background-color: #f2f2f2;
+    padding: 11px 24px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  div.dropdown > ul.list {
+    position: absolute;
+    background-color: #f2f2f2;
+    width: 100%;
+    border-radius: 0 0 3px 3px;
+    display: none;
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  div.dropdown > ul.list > li.item {
+    padding: 11px 24px;
+    cursor: pointer;
+  }
+  
+  div.dropdown > ul.list > li.item.selected {
+    font-weight: bold;
+  }
+  
+  div.dropdown > div:hover,
+  div.dropdown > ul.list > li.item:hover {
+    /* background-color: rgb(83, 161, 214); */
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+  
+  div.dropdown.open > div {
+    border-radius: 3px 3px 0 0;
+    border-bottom: solid 1px #999;
+  }
+  
+  div.dropdown.open > ul.list {
+    display: block;
+  }

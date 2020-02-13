@@ -4,12 +4,50 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/voting.css">
 </head>
+<body>
+    <!-- Groupie Selector -->
+    <div class="selector" style="float: left;" id="groupie-selector">
+        <div class="dropdown">
+          <div class="caption">Select a Groupie</div>
+          <ul class="list">
+            <li class="item">Denis</li>
+            <li class="item">Danny</li>
+            <li class="item">Marcel</li>
+            <li class="item">Susan</li>
+            <li class="item">Brian</li>
+          </ul>
+        </div>
+    </div>
 
-<!-- <link rel="stylesheet" href="css/voting.css"> -->
-<div id="pollContainer">
+    <!-- Polls -->
+    <div id="poll-container">
+    </div>
 
-</div>
+    <!-- Add Poll -->
+    <div id="add-poll">
+        <input type="text" placeholder="Poll Name...">
+        <button class="inverse-btn" onclick="addPoll()">Add Poll</button>
+    </div>
+    <div id="voting">
 
+    </div>
+    <!-- <label class="groupie-selector">
 
-<script src="js/voting.js"></script>
+        <div class="dd-button">
+          Select a groupie
+        </div>
+      
+        <input type="checkbox" class="dd-input">
+      
+        <ul class="dd-menu">
+          <li>Denis</li>
+          <li>Danny</li>
+          <li>Marcel</li>
+        </ul>
+        
+    </label> -->
+    
+    <script src="js/voting.js"></script>
+    <script src="js/selector.js"></script>    
+</body>
 </html>
