@@ -51,9 +51,14 @@ function getPolls() {
     addPoll('Poll 1');
     const poll = getPollByName('Poll 1');
     addVoteName('Poll 1', 'vote1');
+    addVoteName('Poll 1', 'vote2');
+    addVoteName('Poll 1', 'vote3');
     vote(poll, 'vote1');
     vote(poll, 'vote2');
     vote(poll, 'vote2');
+    vote(poll, 'vote2');
+    vote(poll, 'vote3');
+    vote(poll, 'vote3');
 }
 
 function _setup() {
@@ -64,14 +69,19 @@ function _setup() {
         $('#pollContainer').append(`
         <div class="poll" id="poll${index}">
             <h3>${poll.name}</h3> 
-            <div class="votingContainer">
+            <div class="voting-container">
                 
             </div>
         </div>`);
         console.log(poll.votes)
+        //use calc()
         for(const key in poll.votes) {
-            $(`#poll${index} .votingContainer`).append(`
-                <div>${key}: <span>${poll.votes[key]/total * 100}%</span></div>
+            $(`#poll${index} .voting-container`).append(`
+                <div>
+                    <span>${key}</span>
+                    <div class="voting-bar" style="width: ${Math.round(poll.votes[key]/total * 100 * 2)}px;"></div>
+                    <span>${Math.round(poll.votes[key]/total * 100)}%</span>
+                </div> 
             `);
         }
         

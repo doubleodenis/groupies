@@ -1,0 +1,28 @@
+html {
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.poll {
+    width: 500px;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 3px 5px 3px #888888;
+}
+
+.voting-bar {
+    box-sizing: border-box;
+    background: green;
+    height: 20px;
+    margin: 5px 15px;
+}
+
+.voting-container {
+    display: block;
+}
+
+.voting-container div {
+    display: flex;
+    align-items: center;
+}
