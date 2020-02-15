@@ -5,12 +5,16 @@
     --primary-color-hover: rgb(46, 149, 46);
     --white-hover: rgb(211, 211, 211);
 
+    --primary-color-active: rgb(29, 117, 29);
     --bg-color: #199c6c;
     --shadow-color: #094a328c;
 }
 
-* {
+* {    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
+
 }
 
 html, body {
@@ -39,13 +43,21 @@ h3 {
 }
 input {
     background-color: #f2f2f2;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 3px;
     border: none;
     font: inherit;
 }
 input:focus {
     outline-color: var(--shadow-color);
+}
+
+input[type=radio] {
+    margin-right: 10px;
+}
+
+button { 
+    outline: none;
 }
 /* Polls */
 #poll-container {
@@ -74,12 +86,24 @@ input:focus {
     justify-self: center;
     box-shadow: 2px 3px 5px 4px #6f8a80;
 }
-
+.poll .add-vote {
+    height: 25px;
+    font-size: 14px;
+    margin: 25px 0px 0px 0px;
+    
+}
+.poll .inverse-btn {
+    height: 25px;
+    width: 25px;
+}
+.poll .inverse-btn:focus {
+    outline: none;
+}
 .voting-bar {
     box-sizing: border-box;
     background: green;
     height: 20px;
-    margin: 5px 15px;
+    margin: 5px 15px 5px 0px;
 }
 
 .voting-container {
@@ -102,6 +126,7 @@ button.inverse-btn {
     font-size: 16px;
     font-weight: bold;
     box-shadow: 1px 2px 5px 3px var(--shadow-color);
+    outline: none;
 }
 
 button.inverse-btn:hover {
@@ -109,9 +134,9 @@ button.inverse-btn:hover {
     color: var(--white-hover);
 }
 
-button.inverse-btn:focus {
+button.inverse-btn:active {
+    background-color: var(--primary-color-active);
     box-shadow: 1px 2px 5px 3px var(--shadow-color);
-    border: none;
     outline-color: var(--shadow-color);
 }
 
@@ -147,6 +172,7 @@ button.next-btn:after {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    z-index: 25;
   }
   
   div.dropdown > ul.list > li.item {
@@ -172,4 +198,80 @@ button.next-btn:after {
   
   div.dropdown.open > ul.list {
     display: block;
+  }
+
+  /* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+      display: grid;
+    visibility: hidden;
+    min-width: 120px;
+    background-color: rgba(16, 46, 20, 0.644);
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    top: -15px;
+    left: 100%;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgba(16, 46, 20, 0.644) transparent transparent;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .ellipse {
+    display: block !important;
+    text-overflow: ellipsis;
+    /* Required for text-overflow to do anything */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 20%;
+    min-width: 100px;
+    margin-right: 5px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    html, body {
+        width: 100%;
+      /* margin: 0; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    body {
+        margin: 0;
+        padding: 15px;
+        padding-bottom: 25px;
+    }
+    .poll.main { width: 100%; }
+    .poll {
+        width: 100%;
+        /* max-width: 750px; */
+        /* padding: 25px; */
+        border-radius: 5px;
+        box-shadow: 1px 2px 5px 3px var(--shadow-color);
+        margin: 25px 0;
+        background-color: #f2f2f2;
+    }
   }
