@@ -4,7 +4,8 @@ body {
   padding: 0;
   height: 100%;
 }
-body {
+/* Initial arcade setting */
+body.arcade {
   background: repeating-linear-gradient(to bottom, #0f0a1e, #0f0a1e 2px, #140e29 2px, #140e29 4px);
 }
 
