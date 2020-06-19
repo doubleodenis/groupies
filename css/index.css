@@ -1,43 +1,93 @@
 body {
-    background-color: #199c6c;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 70%, rgba(7,36,60,1) 100%);
+    overflow-x: none;
 }
 
 /* Navigation */
 main nav {
     width: 100%;
-    height: 40px;
-    background-color: rgb(23, 24, 66);
+    height: 50px;
+    background: transparent;
+    background-color: rgba(0,0,0,.4);
 }
+
 main nav > ul {
 
     list-style-type: none;
     display: flex;
     margin: 0;
     height: inherit;
-    line-height: 30px;
+    line-height: 40px;
 
 }
 
 nav > ul li {
-
     color: white;
     padding: 5px 10px;
     cursor: pointer;
-
+    font-size: 16px;
 }
 
-nav > ul li:hover{
-
-    background-color: rgb(18, 18, 51);
-    color: rgb(192, 192, 192);
-    
-}
 nav > ul li > a {
 
     text-decoration: none;
     color: white;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
     font-family:Arial, Helvetica, sans-serif;
 
+}
+
+nav > ul li:hover {
+    background-color:rgba(255, 255, 255, 0.226);
+    transition: ease-in .3s;
+    
+}
+
+.hero-image {
+    background-image: url("../assets/groupies-group-camping-optimized.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100vw;
+  }
+
+.hero-overlay {
+    background: rgba(0,0,0,.25);
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.groupies-header {
+    font-family: 'Bangers', cursive;
+    font-size: 100px;
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    opacity: 90%;
+}
+
+/* .groupies-header::before {
+    content: "Groupies";
+    position: absolute;
+    color: rgba(0,0,255,0.5);
+    margin: -3px;
+} */
+.groupies-header::after {
+    content: "Groupies";
+    position: absolute;
+    color: rgba(255,0,0,0.5);
+    margin: 3px;
+}
+
+.toggleNightMode {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 }
