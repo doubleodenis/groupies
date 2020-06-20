@@ -1,24 +1,12 @@
+
 let nightMode = false;
 const nightModeOnIcon = document.getElementById("nightModeOn");
 const nightModeOffIcon = document.getElementById("nightModeOff");
-
+start();
 
 function start() {
 
-    //Removing arcade stuff
-    const body = document.querySelector("body");
-    
-    const classList = body.classList;
-    if(classList.contains("arcade")) {
-        classList.remove("arcade");
-    }
 
-    const text = document.querySelector("div.arcade-text");
-    text.remove();
-
-    const main = document.querySelector("main");
-    main.style.display = "block";
-    
     hideElement(nightModeOnIcon);
     hideElement(nightModeOffIcon);
 
@@ -47,4 +35,11 @@ function toggleNightMode() {
         hideElement(nightModeOnIcon);
     }   
         
+}
+window.onload = function () {
+    window.onscroll = function() {
+        const header = document.querySelector("header");
+        header.style.opacity = 1 - 1.5 * this.document.documentElement.scrollTop / header.clientHeight; 
+        // console.log(header.style.opacity, (this.document.documentElement.scrollTop / header.clientHeight));
+    };
 }
