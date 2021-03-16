@@ -22,21 +22,25 @@ const ListItem = styled.li`
 `;
 
 
-const Nav = styled.nav`
+const Nav = styled.nav(({ staticNav }) => `
     width: 100%;
     height: 50px;
     background: transparent;
     background-color: rgba(0,0,0,.4);
-`;
+    position: ${staticNav ? 'fixed' : 'unset'};
+    z-index: 1;
+`);
 
 function toggleNightMode() {
 
 }
 
-const Navbar = () => {
+const Navbar = ({ staticNav }) => {
     return (
-        <Nav>
+        <Nav staticNav={staticNav}>
             <List >
+                
+                <NavItem to="/">HOME</NavItem>
                 <NavItem to="/members">MEMBERS</NavItem>
                 <NavItem to="/skwop">SKWOP</NavItem>
                 <NavItem to="/cars">CARS</NavItem>

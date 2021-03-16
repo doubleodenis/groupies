@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components"
 import Layout from "../components/Layout";
+import Hero from '../components/Hero';
 
 const Container = styled.div`
   margin: 3rem auto;
@@ -15,8 +16,10 @@ const Container = styled.div`
 const IndexPage = () => {
   return (
     <main>
-      <Layout>
-        test
+      <Layout staticNav>
+        <Hero>
+
+        </Hero>
       </Layout>
     </main>
   )

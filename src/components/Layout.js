@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import Hero from "../components/Hero";
 import { createGlobalStyle } from "styled-components"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet";
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -19,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 
-const Layout = ({ children }) => {
+const Layout = ({ children, staticNav }) => {
     return (
         <div>
             <Helmet>
@@ -31,7 +32,8 @@ const Layout = ({ children }) => {
                 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"></link>
             </Helmet>
             <GlobalStyle theme="purple" />
-            <Navbar />
+            <Navbar staticNav={staticNav}/>
+            
             {children}
         </div>
     )
