@@ -16,17 +16,20 @@
   },
   "license": "0BSD",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.12.0",
-    "gatsby": "^2.26.1",
-    "gatsby-plugin-image": "^1.0.1",
-    "gatsby-plugin-react-helmet": "^3.7.0",
-    "gatsby-plugin-sharp": "^3.0.1",
-    "gatsby-plugin-styled-components": "^3.7.0",
-    "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-transformer-sharp": "^3.0.0",
+    "babel-plugin-styled-components": "^1.13.3",
+    "chart.js": "^3.9.1",
+    "gatsby": "^2.32.13",
+    "gatsby-plugin-image": "^1.14.2",
+    "gatsby-plugin-react-helmet": "^3.10.0",
+    "gatsby-plugin-sharp": "^3.14.3",
+    "gatsby-plugin-styled-components": "^3.10.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-sharp": "^3.14.0",
     "react": "^16.13.1",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.2.1"
+    "react-polygon": "^0.2.0",
+    "styled-components": "^5.3.6"
   }
 }
